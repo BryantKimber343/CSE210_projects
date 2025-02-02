@@ -9,7 +9,10 @@ class Program
         Journal journal = new Journal();
         string choice = "";
         bool done = false;
-        
+       if (new FileInfo("journalbook.txt").Length != 0)
+        {
+            journal.loadEntries();
+        } 
         while (!done)
         {
             Menu.DisplayMenu();
@@ -19,19 +22,14 @@ class Program
             if (choice == "1")
             {
                 journal.addEntry();
-            } else if (choice == "2" && new FileInfo("journalbook.txt").Length != 0)
-            {
-                journal._entries.Clear();
-                journal.loadEntries();
-                Console.WriteLine("Entries loaded.");
-            } else if (choice == "3")
+            } else if (choice == "2")
             {
                 journal.saveEntries();
                 Console.WriteLine("Entries saved.");
-            } else if (choice == "4")
+            } else if (choice == "3")
             {
                 journal.displayJournal();
-            } else if (choice == "5")
+            } else if (choice == "4")
             {   
                 if (journal._changed)
                 {

@@ -21,6 +21,8 @@ public class Journal
     {
         Entry entry = new Entry();
         entry._prompt = new PromptManager().getPrompt();
+        Console.WriteLine("First, what's one word to describe how you're feeling today?");
+        entry._feeling = Console.ReadLine();
         Console.WriteLine(entry._prompt);
         entry._response = Console.ReadLine();
         _entries.Add(entry);
@@ -32,12 +34,13 @@ public class Journal
         string filename = "journalbook.txt";
         string[] lines = System.IO.File.ReadAllLines(filename);
 
-        for (int i = 0; i < lines.Length; i += 4)
+        for (int i = 0; i < lines.Length; i += 5)
         {
             Entry entry = new Entry();
             entry._dateAndTime = lines[i];
             entry._prompt = lines[i + 1];
             entry._response = lines[i + 2];
+            entry._feeling = lines[i + 3];
             _entries.Add(entry);
         }
         _loaded = true;
@@ -55,6 +58,7 @@ public class Journal
                 outputFile.WriteLine(entry._dateAndTime);
                 outputFile.WriteLine(entry._prompt);
                 outputFile.WriteLine(entry._response);
+                outputFile.WriteLine("Feeling: "+entry._feeling);
                 outputFile.WriteLine();
             }
         }
