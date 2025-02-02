@@ -16,7 +16,9 @@ public class PromptManager
             "What are you grateful for today?",
             "What did you learn today?",
             "What is one thing you want to accomplish tomorrow?",
-            "Describe a moment that made you smile today."
+            "Describe a moment that made you smile today.",
+            "What was the strongest emotion I felt today?",
+            "If I had one thing I could do over today, what would it be?"
         };
     
     public string getPrompt()
