@@ -1,43 +1,34 @@
 class Word
 {
-    private string _word;
-    private bool _hidden;
+    private string _word ;
+    private bool _isHidden;
 
     public Word()
     {
         _word = "";
-        _hidden = false;
+        _isHidden = false;
     }
-
-    public Word(string text, bool hidden)
+    public Word(string word, bool isHidden)
     {
-        _word = text;
-        _hidden = hidden;
+        _word = word;
+        _isHidden = isHidden;
     }
-
+    public bool GetHidden()
+    {
+        return _isHidden;
+    }
+    public void SetHidden(bool isHidden)
+    {
+        _isHidden = isHidden;
+    } 
     public void Display()
     {
         Console.Write(_word + " ");
     }
-
-    public bool IsHidden()
-    {
-        foreach (char c in _word)
-        {
-            if (c == '_')
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public void HideWord()
     {
-
-        int length = _word.Length;
         string hiddenWord = "";
-        for (int i = 0; i < length; i++)
+        for (int i = 0; i < _word.Length; i++)
         {
             hiddenWord += "_";
         }
