@@ -1,8 +1,12 @@
 
+using System.Runtime.InteropServices.Marshalling;
+
 class Program
 {
     static void Main(string[] args)
-    {
+    { 
+        Timer watch = new Timer();
+
         List<Scripture> _scriptures = new List<Scripture>();
         Scripture scripture1 = new Scripture("1 Now behold, a marvelous work is about to come forth among the children of men.\n2 Therefore, O ye that embark in the service of God, see that ye serve him with all your heart, might, mind and strength, that ye may stand blameless before God at the last day.\n3 Therefore, if ye have desires to serve God ye are called to the work;", "D&C 4:1-3");
         Scripture scripture2 = new Scripture("1 And now it came to pass that when Jesus had spoken these words he looked round about again on the multitude, and he said unto them: Behold, my time is at hand.\n2 I perceive that ye are weak, that ye cannot understand all my words which I am commanded of the Father to speak unto you at this time.\n3 Therefore, go ye unto your homes, and ponder upon the things which I have said, and ask of the Father, in my name, that ye may understand, and prepare your minds for the morrow, and I come unto you again.", "3 Nephi 17:1-3");
@@ -17,10 +21,13 @@ class Program
         _scriptures.Add(scripture5);
 
         Console.Clear();
+        
+        
         bool done = false;
         Random random = new Random();
         int index = random.Next(0, _scriptures.Count);
 
+        watch.Start();
         while(!done && !_scriptures[index].IsFinished())
         {
             Console.Clear();
@@ -37,8 +44,12 @@ class Program
                 _scriptures[index].HideWord();
             }
         }
+        watch.Stop();
         Console.Clear();
         _scriptures[index].Display();
+
+        double elapsedTime = watch.GetTimePassed();
+        Console.WriteLine($"Congratulations it took you {Math.Round(elapsedTime,2)} seconds to complete the scripture");  
     }
     
 }
