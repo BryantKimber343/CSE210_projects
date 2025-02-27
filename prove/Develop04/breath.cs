@@ -8,8 +8,7 @@ class Breath : Activity
     {
         Console.Clear();
         for (int i = 0; i < GetDuration()/10 ; i++)
-        {
-            
+        {   
             Console.WriteLine("\nBreath in...");
             animation.CountdownDisplay(5);
             Console.WriteLine();

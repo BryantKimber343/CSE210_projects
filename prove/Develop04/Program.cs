@@ -6,10 +6,11 @@ class Program
        Animation animation = new Animation();
        Breath breathingActivity = new Breath();
        Listing listingActivity = new Listing();
-       Reflect reflectionActivity = new Reflect(); 
+       Reflect reflectionActivity = new Reflect();
+       Goal goalActivity = new Goal(); 
 
        int ans = 0; 
-       while (ans != 4)
+       while (ans != 5)
        {
         animation.DisplayMenu();
         ans = int.Parse(Console.ReadLine());
@@ -37,6 +38,13 @@ class Program
             reflectionActivity.ReflectionExercise();
             reflectionActivity.FinishDisplay();
         } else if(ans == 4)
+        {
+            goalActivity.WelcomeDisplay();
+            goalActivity.SetDuration();
+            animation.GetReadyAnimation();
+            goalActivity.GoalExercise();
+            goalActivity.FinishDisplay();
+        } else if(ans == 5)
         {
             Console.Write("\nGood Bye~~");
             break;

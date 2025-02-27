@@ -30,7 +30,7 @@ class Animation
             Thread.Sleep(1000);
             Console.Write("\b \b");
         }
-    }
+    } 
 
     public void DisplayMenu()
     {
@@ -38,7 +38,8 @@ class Animation
         Console.WriteLine("1: Breathing Exercise");
         Console.WriteLine("2: Listing Exercise");
         Console.WriteLine("3: Reflection Exercise");
-        Console.WriteLine("4: Quit");
+        Console.WriteLine("4: Goal Setting Exercise");
+        Console.WriteLine("5: Quit");
         Console.Write("Please choose an option: ");
     }
 }
