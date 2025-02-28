@@ -47,7 +47,6 @@ class Program
         } else if(ans == 5)
         {
             Console.Write("\nGood Bye~~");
-            break;
         } else {
             Console.Write("\nSorry that is not a valid answer Please try again");
             Thread.Sleep(3000);
