@@ -58,7 +58,7 @@ public class Journal
                 outputFile.WriteLine(entry._dateAndTime);
                 outputFile.WriteLine(entry._prompt);
                 outputFile.WriteLine(entry._response);
-                outputFile.WriteLine("Feeling: "+entry._feeling);
+                outputFile.WriteLine("Feeling: " + entry._feeling);
                 outputFile.WriteLine();
             }
         }
